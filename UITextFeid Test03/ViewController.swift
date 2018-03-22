@@ -14,12 +14,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    @IBOutlet weak var txtF: UITextField!
+    @IBOutlet weak var lbl: UILabel!
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        txtF.placeholder = "입력하세요"
+
     }
 
-
+    @IBAction func btn(_ sender: Any) {
+        lbl.text = "Hello" + txtF.text!
+        txtF.text = " "
+        txtF.resignFirstResponder()
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        txtF.resignFirstResponder()
+    }
 }
 
